@@ -21,22 +21,24 @@ function h(tag, attrs, children) {
         newTag.setAttribute(attr, attrs[attr]);
     })
 
-    if(!!attrs){
-        if(!!attrs.class){
-            newTag.className = attrs.class;
-        }   
-    }
+    // if(!!attrs){
+    //     if(!!attrs.class){
+    //         newTag.className = attrs.class;
+    //     }   
+    // }
 
     return newTag;
 }
 
-function makeCell() {
-    return h("div", {class: "cell", id:"1-1", disable: "false"}, []);
+function makeCell(id) {
+    return h("div", {class: "cell", id:id, disable: "false"}, []);
 }
 function makeCellArray() {
     var cellArray = [];
+    var numCol = 10;
     for(var i = 0; i < 100; i++){
-        cellArray.push(makeCell());
+        var id = `cell-${Math.trunc(i/numCol)}-${i%numCol}`
+        cellArray.push(makeCell(id));
     }
     return cellArray;
 }
