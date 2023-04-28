@@ -31,15 +31,15 @@ function h(tag, attrs, children) {
 }
 
 function includes(arr, item) {
-    var isIncluded = false;
-    for(var curr of arr){
-        if(curr === item) {
-            isIncluded = true;
-            break;
-        }
-    }
+    // var isIncluded = false;
+    // for(var curr of arr){
+    //     if(curr === item) {
+    //         isIncluded = true;
+    //         break;
+    //     }
+    // }
 
-    return isIncluded;
+    return true; //isIncluded;
 }
 
 function makeCell(id) {
