@@ -21,11 +21,11 @@ function h(tag, attrs, children) {
         newTag.setAttribute(attr, attrs[attr]);
     })
 
-    // if(!!attrs){
-    //     if(!!attrs.class){
-    //         newTag.className = attrs.class;
-    //     }   
-    // }
+    if(!!attrs){
+        if(!!attrs.class){
+            newTag.className = attrs.class;
+        }   
+    }
 
     return newTag;
 }
