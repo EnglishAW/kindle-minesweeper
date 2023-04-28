@@ -1,5 +1,5 @@
-  
-  function h(tag, attrs, children) {
+
+function h(tag, attrs, children) {
     var newTag = document.createElement(tag);
     children.forEach(function (child) {
         if(typeof child === "string"){
@@ -10,7 +10,7 @@
         }
     })
 
-    
+
 
     if(!!attrs){
         if(!!attrs.class){
@@ -19,17 +19,26 @@
     }
 
     return newTag;
-  }
+}
 
-  function makeCell() {
+function makeCell() {
     return h("div", {class: "cell"}, []);
-  }
+}
+function makeCellArray() {
+    var initArray = new Array(10).fill(0);
+    var cellArray = initArray.map(function (){
+        return makeCell();
+    })
+    return cellArray;
+}
 
 //   var textP = h("p", {}, ["I'm a paragragh!"])
 //   var textP2 = h("p", {}, ["I'm a paragragh Too!"])
+var cellArray = makeCellArray()
+console.log(cellArray)
+var boardEl = h("div", {class: "board"}, cellArray)
+// var newDiv = h("div", {class: "largePrint"}, ["Hello World"]);
 
-  var newDiv = h("div", {class: "largePrint"}, [makeCell(), makeCell(), makeCell()]);
-
-  // add the newly created element and its content into the DOM
-  const app = document.getElementById("app");
-  app.appendChild(newDiv, app);
+// add the newly created element and its content into the DOM
+const app = document.getElementById("app");
+app.appendChild(boardEl, app);
