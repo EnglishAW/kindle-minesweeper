@@ -29,7 +29,7 @@ function makeCellArray() {
     // var cellArray = initArray.map(function (){
     //     return makeCell();
     // })
-    return cellArray;
+    return initArray;
 }
 
 //   var textP = h("p", {}, ["I'm a paragragh!"])
