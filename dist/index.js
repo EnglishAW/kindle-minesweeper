@@ -32,11 +32,12 @@ function h(tag, attrs, children) {
 
 function includes(arr, item) {
     var isIncluded = false;
-    arr.forEach(function (curr){
+    arr.every(function (curr){
         if(curr === item) {
             isIncluded = true;
+            return false;
         }
-        
+        return true;
     })
     // for(var curr of arr){
     //     if(curr === item) {
