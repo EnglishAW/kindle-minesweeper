@@ -31,7 +31,13 @@ function h(tag, attrs, children) {
 }
 
 function includes(arr, item) {
-    // var isIncluded = false;
+    var isIncluded = false;
+    arr.forEach(function (curr){
+        if(curr === item) {
+            isIncluded = true;
+        }
+        
+    })
     // for(var curr of arr){
     //     if(curr === item) {
     //         isIncluded = true;
@@ -39,7 +45,7 @@ function includes(arr, item) {
     //     }
     // }
 
-    return true; //isIncluded;
+    return isIncluded;
 }
 
 function makeCell(id) {
