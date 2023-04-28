@@ -6,15 +6,24 @@ function h(tag, attrs, children) {
             var newContent = document.createTextNode(child);
             newTag.appendChild(newContent);
         } else {
-            newTag.appendChild(child)
+            newTag.appendChild(child);
         }
     })
 
 
 
+    var settableAttrs = Object.keys(attrs).filter(function (attr){
+        var nonSettables = ['class'];
+        return !nonSettables.includes(attr);
+    });
+
+    settableAttrs.forEach(function (attr){
+        newTag.setAttribute(attr, attrs[attr]);
+    })
+
     if(!!attrs){
         if(!!attrs.class){
-            newTag.className = attrs.class
+            newTag.className = attrs.class;
         }   
     }
 
@@ -22,7 +31,7 @@ function h(tag, attrs, children) {
 }
 
 function makeCell() {
-    return h("div", {class: "cell"}, []);
+    return h("div", {class: "cell", id:"1-1", disable: "false"}, []);
 }
 function makeCellArray() {
     var cellArray = [];
