@@ -30,6 +30,18 @@ function h(tag, attrs, children) {
     return newTag;
 }
 
+function includes(arr, item) {
+    var isIncluded = false;
+    for(var curr of arr){
+        if(curr === item) {
+            isIncluded = true;
+            break;
+        }
+    }
+
+    return isIncluded;
+}
+
 function makeCell(id) {
     return h("div", {class: "cell", id:id, disable: "false"}, []);
 }
@@ -53,7 +65,7 @@ var boardEl = h("div", {class: "board"}, cellArray);
 window.addEventListener("click", function (e) {
     var classList = e.target.className.split(" ");
     console.log(classList);
-    if(classList.includes('cell')){
+    if(includes(classList, 'cell')){
         e.target.className += " active";
     }
 });
