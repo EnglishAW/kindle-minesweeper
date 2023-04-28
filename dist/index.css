@@ -13,6 +13,7 @@
     height: 1000px;
     border: solid 1px black;
     text-align: left;
+    line-height: 0;
 }
 
 .cell {
