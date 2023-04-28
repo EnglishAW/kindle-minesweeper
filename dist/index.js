@@ -1,7 +1,7 @@
   
   function h(tag, attrs, children) {
     var newTag = document.createElement(tag);
-    children.forEach((child) => {
+    children.forEach(function (child) {
         if(typeof child === "string"){
             var newContent = document.createTextNode(child);
             newTag.appendChild(newContent);
