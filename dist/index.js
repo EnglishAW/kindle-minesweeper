@@ -26,9 +26,9 @@ function makeCell() {
 }
 function makeCellArray() {
     var initArray = new Array(10).fill(0);
-    var cellArray = initArray.map(function (){
-        return makeCell();
-    })
+    // var cellArray = initArray.map(function (){
+    //     return makeCell();
+    // })
     return cellArray;
 }
 
