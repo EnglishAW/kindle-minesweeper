@@ -1,3 +1,9 @@
 .largePrint {
     font-size: 36px;
 }
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+}

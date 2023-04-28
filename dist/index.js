@@ -21,9 +21,14 @@
     return newTag;
   }
 
-  var textP = h("p", {}, ["I'm a paragragh!"])
-  var textP2 = h("p", {}, ["I'm a paragragh Too!"])
-  var newDiv = h("div", {class: "largePrint"}, [textP, textP2]);
+  function makeCell() {
+    return h("div", {class: "cell"}, []);
+  }
+
+//   var textP = h("p", {}, ["I'm a paragragh!"])
+//   var textP2 = h("p", {}, ["I'm a paragragh Too!"])
+
+  var newDiv = h("div", {class: "largePrint"}, [makeCell(), makeCell(), makeCell()]);
 
   // add the newly created element and its content into the DOM
   const app = document.getElementById("app");
