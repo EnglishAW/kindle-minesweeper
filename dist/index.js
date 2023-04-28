@@ -53,7 +53,7 @@ var boardEl = h("div", {class: "board"}, cellArray);
 window.addEventListener("click", function (e) {
     var classList = e.target.className.split(" ");
     console.log(classList);
-    if(!classList.includes('active')){
+    if(classList.includes('cell')){
         e.target.className += " active";
     }
 });
