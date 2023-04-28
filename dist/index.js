@@ -38,7 +38,7 @@ function makeCellArray() {
     var numCol = 10;
     for(var i = 0; i < 100; i++){
         var rowCol = (i/numCol).toString().split('.');
-        var id = "cell-" + rowCol[0] + "-" + rowCol[1];
+        var id = "cell-" + rowCol[0] + "-" + (rowCol[1] || 0);
         cellArray.push(makeCell(id));
     }
     return cellArray;
@@ -50,7 +50,9 @@ var cellArray = makeCellArray();
 // console.log(cellArray)
 var boardEl = h("div", {class: "board"}, cellArray);
 // var newDiv = h("div", {class: "largePrint"}, ["Hello World"]);
-
+window.addEventListener("click", function (e) {
+    e.target.className += " active";
+});
 // add the newly created element and its content into the DOM
 const app = document.getElementById("app");
 app.appendChild(boardEl, app);
