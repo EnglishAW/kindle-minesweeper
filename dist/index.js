@@ -11,11 +11,11 @@ function h(tag, attrs, children) {
     })
 
 
-
-    var settableAttrs = Object.keys(attrs).filter(function (attr){
-        var nonSettables = ['class'];
-        return !nonSettables.includes(attr);
-    });
+    var settableAttrs = Object.keys(attrs);
+    // var settableAttrs = Object.keys(attrs).filter(function (attr){
+    //     var nonSettables = ['class'];
+    //     return !nonSettables.includes(attr);
+    // });
 
     settableAttrs.forEach(function (attr){
         newTag.setAttribute(attr, attrs[attr]);
