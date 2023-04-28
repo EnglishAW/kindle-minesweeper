@@ -51,7 +51,11 @@ var cellArray = makeCellArray();
 var boardEl = h("div", {class: "board"}, cellArray);
 // var newDiv = h("div", {class: "largePrint"}, ["Hello World"]);
 window.addEventListener("click", function (e) {
-    e.target.className += " active";
+    var classList = e.target.className.split(" ");
+    console.log(classList);
+    if(!classList.includes('active')){
+        e.target.className += " active";
+    }
 });
 // add the newly created element and its content into the DOM
 const app = document.getElementById("app");
