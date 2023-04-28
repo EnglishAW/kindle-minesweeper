@@ -1,8 +1,16 @@
   
   function h(tag, attrs, children) {
     var newTag = document.createElement(tag);
-    var newContent = document.createTextNode(children);
-    newTag.appendChild(newContent);
+    children.forEach((child) => {
+        if(typeof child === "string"){
+            var newContent = document.createTextNode(child);
+            newTag.appendChild(newContent);
+        } else {
+            newTag.appendChild(child)
+        }
+    })
+
+    
 
     if(!!attrs){
         if(!!attrs.class){
@@ -13,8 +21,9 @@
     return newTag;
   }
 
-
-  var newDiv = h("div", {class: "largePrint"}, "Hello Kindle");
+  var textP = h("p", {}, ["I'm a paragragh!"])
+  var textP2 = h("p", {}, ["I'm a paragragh Too!"])
+  var newDiv = h("div", {class: "largePrint"}, [textP, textP2]);
 
   // add the newly created element and its content into the DOM
   const app = document.getElementById("app");
