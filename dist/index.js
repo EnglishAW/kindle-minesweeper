@@ -25,7 +25,7 @@ function makeCell() {
     return h("div", {class: "cell"}, []);
 }
 function makeCellArray() {
-    var initArray = new Array(10).fill(0);
+    var initArray = new Array(10);
     // var cellArray = initArray.map(function (){
     //     return makeCell();
     // })
