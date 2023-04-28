@@ -37,7 +37,7 @@ function makeCellArray() {
     var cellArray = [];
     var numCol = 10;
     for(var i = 0; i < 100; i++){
-        var id = `cell-${Math.trunc(i/numCol)}-${i%numCol}`
+        var id = `cell-${i/numCol}-${i%numCol}`
         cellArray.push(makeCell(id));
     }
     return cellArray;
