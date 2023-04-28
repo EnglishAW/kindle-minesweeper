@@ -73,7 +73,17 @@ window.addEventListener("click", function (e) {
     var classList = e.target.className.split(" ");
     console.log(classList);
     if(includes(classList, 'cell')){
-        e.target.className += " active";
+        if(!includes(classList, 'active')){
+            e.target.className += " active";
+        } else {
+            var filteredClassList = classList.filter(function (item) {
+                if(item !== 'active'){
+                    return true;
+                }
+            })
+
+            e.target.className = filteredClassList.join(" ");
+        }
     }
 });
 // add the newly created element and its content into the DOM
