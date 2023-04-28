@@ -1,11 +1,14 @@
-  // create a new div element
-  const newDiv = document.createElement("div");
+  
+  function h(tag, attrs, children) {
+    var newTag = document.createElement(tag);
+    var newContent = document.createTextNode(children);
+    newTag.appendChild(newContent);
+    
+    return newTag;
+  }
 
-  // and give it some content
-  const newContent = document.createTextNode("Kindle Minesweeper");
 
-  // add the text node to the newly created div
-  newDiv.appendChild(newContent);
+  var newDiv = h("div", null, "Hello Kindle");
 
   // add the newly created element and its content into the DOM
   const app = document.getElementById("app");
