@@ -1,30 +1,87 @@
 #app {
     width: 100%;
     text-align: center;
+
+}
+#game-container {
+    /* width: 100%; */
+    background-color: #c0c0c0;
+    border-left: solid 5px #ffffff;
+    border-top: solid 5px #ffffff;
+    border-right: solid 5px #808080;
+    border-bottom: solid 5px #808080;
+
+    padding: 15px;
+    width: 1010px;
+    text-align: center;
+    display: inline-block;
+    /* border: solid 1px black; */
+}
+
+#score-section {
+    background-color: #c0c0c0;
+    border-left: solid 5px #808080;
+    border-top: solid 5px #808080;
+    border-right: solid 5px #ffffff;
+    border-bottom: solid 5px #ffffff;
+
+    display: inline-block;
+    width: 1000px;
+    height: 150px;
+    text-align: center;
+    margin-bottom: 10px;
+
 }
 
 .largePrint {
     font-size: 36px;
 }
 
+
 .board {
     display: inline-block;
     width: 1000px;
     height: 1000px;
-    border: solid 1px black;
+    border-left: solid 5px #808080;
+    border-top: solid 5px #808080;
+    border-right: solid 5px #ffffff;
+    border-bottom: solid 5px #ffffff;
     text-align: left;
     line-height: 0;
 }
 
 .cell {
+    position: relative;
     display: inline-block;
     width: 100px;
     height: 100px;
-    border: solid 1px black;
+    background-color: #c0c0c0;
+    border-left: solid 5px #ffffff;
+    border-top: solid 5px #ffffff;
+    border-right: solid 5px #808080;
+    border-bottom: solid 5px #808080;
     box-sizing: border-box;
+
+}
+.cell-content {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    display: block;
+    text-align: center;
+    /* vertical-align: middle; */
+    font-size: 64px;
+    box-sizing: border-box;
+    /* transform: translate(-50%, 0%); */
+    /* line-height: 30px; */
 }
 
 .active {
-    border: solid 3px black;
-    background-color: #AAAAAA;
+    border: solid 1px #808080;
+    background-color: #c0c0c0;
+}
+
+.checked {
+    border: solid 1px #808080;
+    background-color: #c0c0c0;
 }
